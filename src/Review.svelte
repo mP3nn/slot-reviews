@@ -1,6 +1,7 @@
 <script>
 	export let name;
 	export let rating;
+	export let logo;
 	export let intro;
 	export let image1;
 	export let description2;
@@ -16,8 +17,9 @@
 
 <div class="card">
 	<div class="row">
+		<img src="{logo}" alt="" style="width:20%;">
 		<div class="col-9">
-			<h1>{name}</h1>
+			<span><h1> {name} </h1><img src="{rating}" alt="" style="width:30%;"> </span>
 		</div>
 		<div class="col-3">
 			{#if !readMore}<button class="button-primary" on:click={onReadMore}>Read More</button>{:else}<button class="button-danger" on:click={onReadMore}>Read Less</button>{/if}
