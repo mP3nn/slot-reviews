@@ -5,7 +5,7 @@
 		{
     		"name":"LeoVegas",
     		"rating":"https://miro.medium.com/max/4000/0*hJ9jT2iOGIU63xJ9.png",
-			"logo":"https://thecomeback.com/wp-content/uploads/2020/06/leo-vegas.gif",
+			"logo":"./img/leo-vegas.jpg",
     		"image1":"https://www.casinostoplay.com/wp-content/uploads/2019/02/LeoVegasLogo-900x369.jpg",
     		"intro":"LeoVegas è uno dei nostri preferiti: è da anni il nostro casinò prediletto. Ma LeoVegas è fantastico per più di semplici motivi sentimentali. C'è qualcosa in questo operatore che si distingue e gli conferisce un tocco più personale. Potrebbe essere il fatto che ha l'assistenza clienti più professionale e reattiva che abbiamo mai incontrato, qualcosa per cui LeoVegas è stato persino premiato. Tutto ciò che potresti chiedere come giocatore è incluso nel pacchetto: una piattaforma veloce che rende i giochi facili da giocare, i pagamenti sono incredibilmente veloci, c'è una vasta selezione di giochi e le promozioni sono eccezionali. Inoltre, l'app mobile è una delle migliori che abbiamo mai visto ed è un'altra cosa per cui l'azienda ha ricevuto dei premi. Questo è un marchio affidabile. Non leggerai mai termini d'uso senza senso qui ed è così dal giorno in cui è stato fondato, nel 2011. LeoVegas è un casinò svedese con sede a Malta ed è noto in Svezia per i suoi spot televisivi con varie celebrità.",
     		"image2":"https://i.ytimg.com/vi/VWAVbeCre-0/maxresdefault.jpg",
@@ -22,7 +22,7 @@
 		{
     		"name":"Tsars",
     		"rating":"https://booksnacksblog.files.wordpress.com/2015/09/4-5-stars.png",
-			"logo":"https://www.synergy-casino.de/wp-content/uploads/2020/09/tsar-caisno-logo-200x200-2.jpg",
+			"logo":"./img/tsars.jpg",
     		"image1":"https://casinoohnelizenz.ams3.digitaloceanspaces.com/app/uploads/2020/11/11073020/Tsars-Casino-Test-scaled.jpg",
     		"intro":"Se stai cercando un casinò fresco e innovativo per giocare ai tuoi giochi preferiti, non guardare oltre il casinò Tsars. I nuovi creativi dietro Tsars non erano solo interessati a creare un nuovo casinò; hanno creato un mondo completamente nuovo: un mondo sopra le nuvole che ti fa pensare che tutto sia possibile. È difficile contestarlo quando si provano i giochi eccezionali disponibili e i suoi succosi bonus. Il viaggio inizia con un'offerta di benvenuto in quattro parti, che discuteremo tra pochissimo. Gli utenti beneficiano di una licenza Curacao e di un software di crittografia SSL di alto livello che mantiene i loro dettagli al sicuro. A offrire più tranquillità è un team di assistenza clienti che può essere contattato 24 ore su 24, 7 giorni su 7, letteralmente in qualsiasi momento della giornata. Metti insieme tutte queste cose buone e avrai il casinò Tsars. Qui, non entri nel tuo casinò personale; lasci la Terra per un po 'per goderti ogni tipo di gioco che puoi immaginare, su qualsiasi dispositivo. ",
     		"image2":"https://mlueqjqyklsv.i.optimole.com/5IaoipE-jSooxKhP/w:800/h:398/q:90/https://www.newcasinos.org/wp-content/uploads/2020/07/tsars-website.jpg",
@@ -40,14 +40,38 @@
 	
 	let homePage = true;
 	let reviewsPage = false;
-	
+	let SlotOne = false;
+	let SlotTwo = false;
+	let SlotThree = false;
+
 	function goHomePage() {
 		homePage = true;
 		reviewsPage = false;
+		SlotOne = false;
+		SlotTwo = false;
+		SlotThree = false;
 	}
 	function goReviewsPage() {
 		homePage = false;
 		reviewsPage = true;
+		SlotOne = false;
+		SlotTwo = false;
+		SlotThree = false;
+	}
+	function goSlotOne(){
+		homePage = false;
+		reviewsPage = false;
+		SlotOne = true;
+	}
+	function goSlotTwo(){
+		homePage = false;
+		reviewsPage = false;
+		SlotTwo = true;
+	}
+	function goSlotThree(){
+		homePage = false;
+		reviewsPage = false;
+		SlotThree = true;
 	}
 </script>
 
@@ -78,23 +102,23 @@
 				</div>
 				<div class="col-4">
 					<div class="card">
-						<h1>Slot 1</h1>
+						<center><h1>Bonanza Megapays</h1></center>
 						<img class="border-radius my-1" src="https://mmseagames2013.com/wp-content/uploads/2020/01/8909273.jpg" alt="">
-						<button class="button-success">Leggi di più</button>
+						<center><button class="button-success" on:click={goSlotOne}>Leggi di più</button></center>
 					</div>
 				</div>
 				<div class="col-4">
 					<div class="card">
-						<h1>Slot 2</h1>
+						<center><h1>Slot 2</h1></center>
 						<img class="border-radius my-1" src="https://mmseagames2013.com/wp-content/uploads/2020/01/8909273.jpg" alt="">
-						<button class="button-success">Leggi di più</button>
+						<center><button class="button-success" on:click={goSlotTwo}>Leggi di più</button></center>
 					</div>
 				</div>
 				<div class="col-4">
 					<div class="card">
-						<h1>Slot 3</h1>
+						<center><h1>Slot 3</h1></center>
 						<img class="border-radius my-1" src="https://mmseagames2013.com/wp-content/uploads/2020/01/8909273.jpg" alt="">
-						<button class="button-success">Leggi di più</button>
+						<center><button class="button-success" on:click={goSlotThree}>Leggi di più</button></center>
 					</div>
 				</div>
 			</div>
@@ -110,6 +134,26 @@
 			<Review name={review.name} rating={review.rating} logo={review.logo} intro={review.intro} image1={review.image1} description2={review.description2} image2={review.image2}/>
 		{/each}
 	{/if}
+
+	{#if SlotOne}
+		<div class="card">
+			<h1 class="text-center">Bonanza Megapays</h1>
+		</div>
+
+	{/if}
+	{#if SlotTwo}
+		<div class="card">
+			<h1 class="text-center">Bonanza Megaways</h1>
+		</div>
+
+	{/if}
+	{#if SlotThree}
+		<div class="card">
+			<h1 class="text-center">Extra Chilli Megaways</h1>
+		</div>
+
+	{/if}
+
 </div>
 
 <div class="light">
